@@ -1,0 +1,29 @@
+import React, { useState, useEffect, useReducer } from 'react';
+import { hot } from 'react-hot-loader';
+import ToDoInput from './ToDoInput/ToDoInput';
+import ToDoList from './ToDoList/ToDoList';
+
+import ToDosContext from '../context/todos-context';
+import toDoReducer from '../reducers/todo'; 
+import './App.css';
+
+const App = () => {
+	const [toDos, dispatch] = useReducer(toDoReducer, []);
+	useEffect(() => {
+		const toDos = JSON.parse(localStorage.getItem('toDos'));
+		if (toDos) {
+			dispatch({ type: 'POPULATE_TODOS', toDos });
+		}
+	}, []);
+	useEffect(() => {
+		localStorage.setItem('toDos', JSON.stringify(toDos));
+	}, [toDos]);
+	return (
+		<ToDosContext.Provider value={{ toDos, dispatch }}>
+			<ToDoInput />
+			<ToDoList />
+		</ToDosContext.Provider>
+	)
+}
+
+export default hot(module)(App);
