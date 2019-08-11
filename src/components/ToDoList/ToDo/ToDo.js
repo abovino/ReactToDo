@@ -17,10 +17,10 @@ const ToDo = ({ toDo }) => {
 	}
 	return (
 		<section className='list-item' onClick={completeTodo}>
-			<p className={toDo.isComplete ? 'complete':''}>
+			<p className={toDo.isComplete ? 'complete':'active'}>
 				{toDo.toDo}
 			</p>
-			<div onClick={removeToDo}>x</div>
+			<button className='delete-btn' disabled={toDo.isComplete ? false:true} onClick={removeToDo}>X</button>
 		</section>
 	)
 }
