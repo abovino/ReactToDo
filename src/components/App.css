@@ -29,6 +29,7 @@ body {
 	border-left: none;
 	border-right: none;
 	border-bottom: 1px solid transparent;
+	border-radius: 2px;
 	color: #dadada;
 	background-color: #3d4248;
 }
@@ -49,6 +50,7 @@ body {
 	background-color: #00aeb1;
 	color: #dadada;
 	border: none;
+	border-radius: 2px;
 	transition: all .3s linear;
 }
 
@@ -74,6 +76,7 @@ ul {
 	font-size: .8rem;
 	height: 45px;
 	width: 100%;
+	border-radius: 2px;
 	background-color: #3d4248;
 }
 
