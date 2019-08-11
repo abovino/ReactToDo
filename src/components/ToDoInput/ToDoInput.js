@@ -24,7 +24,7 @@ const ToDoInput = () => {
   }
 	return (
 		<div className='input-container'>
-			<form onSubmit={(e) => addTodo(e)}>
+			<form className='form' onSubmit={(e) => addTodo(e)}>
 				<input className='todo-input' type="text" ref={toDoInputEl} value={toDo} onChange={(e) => setText(e.target.value)} placeholder="Do Things ..."/>
 				<button 
 					className='add-btn' 
