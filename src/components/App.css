@@ -21,7 +21,7 @@ body {
 .todo-input {
 	flex-grow: 2;
 	width: 100%;
-	padding-right: 66px;
+	padding-right: 50px;
 	font-size: 1rem;
 	letter-spacing: 1px;
 	text-align: center;
@@ -44,7 +44,7 @@ body {
 }
 
 .add-btn {
-	margin-left: -66px;
+	margin-left: -55px;
 	width: 4rem;
 	font-size: 38px;
 	background-color: #00aeb1;
