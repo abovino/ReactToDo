@@ -2,6 +2,7 @@ import React, { useState, useEffect, useReducer } from 'react';
 import { hot } from 'react-hot-loader';
 import ToDoInput from './ToDoInput/ToDoInput';
 import ToDoList from './ToDoList/ToDoList';
+import Filter from './Filter/Filter';
 
 import ToDosContext from '../context/todos-context';
 import toDoReducer from '../reducers/todo'; 
@@ -22,6 +23,7 @@ const App = () => {
 		<ToDosContext.Provider value={{ toDos, dispatch }}>
 			<ToDoInput />
 			<ToDoList />
+			{toDos.length > 0 ? <Filter />:''}
 		</ToDosContext.Provider>
 	)
 }
