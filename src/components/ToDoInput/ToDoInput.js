@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import uuid from 'uuid';
 import ToDosContext from '../../context/todos-context';
 
@@ -18,8 +18,9 @@ const ToDoInput = () => {
 			id,
 			isComplete
 		});
-		setText('');
-	}
+    setText('');
+    document.getElementsByClassName('todo-input')[0].focus();
+  }
 	return (
 		<div className='input-container'>
 			<form onSubmit={(e) => addTodo(e)}>
