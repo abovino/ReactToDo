@@ -1,8 +1,9 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import uuid from 'uuid';
 import ToDosContext from '../../context/todos-context';
 
 const ToDoInput = () => {
+  const toDoInputEl = useRef(null);
 	const { dispatch } = useContext(ToDosContext)
 	const [toDo, setText] = useState('');
 	function addTodo(e) {
@@ -19,12 +20,12 @@ const ToDoInput = () => {
 			isComplete
 		});
     setText('');
-    document.getElementsByClassName('todo-input')[0].focus();
+    toDoInputEl.current.focus();
   }
 	return (
 		<div className='input-container'>
 			<form onSubmit={(e) => addTodo(e)}>
-				<input className='todo-input' type="text" value={toDo} onChange={(e) => setText(e.target.value)} placeholder="Do Things ..."/>
+				<input className='todo-input' type="text" ref={toDoInputEl} value={toDo} onChange={(e) => setText(e.target.value)} placeholder="Do Things ..."/>
 				<button 
 					className='add-btn' 
 					type='submit' 
