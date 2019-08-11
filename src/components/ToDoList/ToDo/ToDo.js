@@ -9,13 +9,19 @@ const ToDo = ({ toDo }) => {
 			id: toDo.id
 		});
 	}
+	function removeToDo() {
+		dispatch({
+			type: 'REMOVE_TODO',
+			id: toDo.id
+		})
+	}
 	return (
-		<li 
-			onClick={completeTodo}
-			className={toDo.isComplete ? 'complete':''}
-			>
-			{toDo.toDo}
-		</li>
+		<section className='list-item' onClick={completeTodo}>
+			<p className={toDo.isComplete ? 'complete':''}>
+				{toDo.toDo}
+			</p>
+			<div onClick={removeToDo}>x</div>
+		</section>
 	)
 }
 
