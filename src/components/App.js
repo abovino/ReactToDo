@@ -25,7 +25,7 @@ const App = () => {
 		<ToDosContext.Provider value={{ toDos, filter, dispatch }}>
 			<ToDoInput />
 			<ToDoList />
-			{toDos.length > 0 ? <Filter setFilter={setFilter} />:''}
+			{toDos.length > 0 ? <Filter setFilter={setFilter} filter={filter} />:''}
 		</ToDosContext.Provider>
 	)
 }
