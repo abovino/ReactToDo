@@ -10,6 +10,7 @@ import './App.css';
 
 const App = () => {
 	const [toDos, dispatch] = useReducer(toDoReducer, []);
+	const [filter, setFilter] = useState(undefined);
 	useEffect(() => {
 		const toDos = JSON.parse(localStorage.getItem('toDos'));
 		if (toDos) {
@@ -19,11 +20,12 @@ const App = () => {
 	useEffect(() => {
 		localStorage.setItem('toDos', JSON.stringify(toDos));
 	}, [toDos]);
+	console.log(filter);
 	return (
-		<ToDosContext.Provider value={{ toDos, dispatch }}>
+		<ToDosContext.Provider value={{ toDos, filter, dispatch }}>
 			<ToDoInput />
 			<ToDoList />
-			{toDos.length > 0 ? <Filter />:''}
+			{toDos.length > 0 ? <Filter setFilter={setFilter} />:''}
 		</ToDosContext.Provider>
 	)
 }
