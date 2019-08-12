@@ -6,7 +6,13 @@ const ToDoList = (props) => {
 	const { toDos, filter } = useContext(ToDosContext);
 	return (
 		<div className='list-container'>
-			{toDos.map((toDo, i) => <ToDo key={toDo.id} toDo={toDo} />)}
+			{toDos.map((toDo, i) => {
+        if (toDo.isComplete !== filter) {
+          return <ToDo key={toDo.id} toDo={toDo} />
+        } else if (filter === undefined) {
+          return <ToDo key={toDo.id} toDo={toDo} />
+        }
+      })}
 		</div>
 	)
 }
