@@ -63,8 +63,8 @@ body {
 	cursor: pointer;
 }
 
-ul {
-	padding: 0;
+.list-container {
+	/* margin-bottom: 35px; */
 }
 
 .list-item {
@@ -117,6 +117,27 @@ ul {
 
 .delete-btn:disabled {
 	opacity: 0;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	position: sticky;
+	height: 5vh;
+  left: 0;
+  bottom: 0;
+	width: 100%;
+	background-color: #222529;
+  color: white;
+}
+
+.filter-btn {
+	width: 32%;
+	border: none;
+	color: #dadada;
+	background-color: #3d4248;
+	border: 1px solid #dadada40;
+	letter-spacing: 2px;
 }
 
 @media (min-width: 1281px) {
