@@ -20,7 +20,6 @@ const App = () => {
 	useEffect(() => {
 		localStorage.setItem('toDos', JSON.stringify(toDos));
 	}, [toDos]);
-	console.log(filter);
 	return (
 		<ToDosContext.Provider value={{ toDos, filter, dispatch }}>
 			<ToDoInput />
