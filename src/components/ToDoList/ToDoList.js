@@ -5,7 +5,7 @@ import ToDosContext from '../../context/todos-context';
 const ToDoList = (props) => {
 	const { toDos, filter } = useContext(ToDosContext);
 	return (
-		<div className='list-container'>
+		<div>
 			{toDos.map((toDo, i) => {
         if (toDo.isComplete !== filter) {
           return <ToDo key={toDo.id} toDo={toDo} />
