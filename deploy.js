@@ -12,7 +12,6 @@ sftp.connect({
   return sftp.put(localDistPath, remoteDistPath)
 }).then(res => {
   console.log(res);
-}).then(() => {
   return sftp.end();
 }).catch(err => {
   console.log(err);
