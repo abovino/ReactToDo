@@ -18,7 +18,7 @@ const ToDoList = (props) => {
       <CSSTransitionGroup
         transitionName="fade-todo"
         transitionEnterTimeout={500}
-        transitionLeaveTimeout={300}>
+        transitionLeaveTimeout={500}>
         {items}
       </CSSTransitionGroup>
 		</div>
