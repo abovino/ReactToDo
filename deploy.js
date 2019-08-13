@@ -3,6 +3,7 @@ const Client = require('ssh2-sftp-client');
 const sftp = new Client();
 const localDistPath = './public/dist/bundle.js';
 const remoteDistPath = process.env.REMOTE_DIST_PATH;
+
 sftp.connect({
   host: process.env.SFTP_HOST,
   username: process.env.SFTP_USER,
