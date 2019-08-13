@@ -145,27 +145,6 @@ body {
   outline: none;
 }
 
-@media (min-width: 1281px) {
-  #root {
-		width: 45vw;
-  }
-  
-  .todo-input {
-    font-size: 1.5rem;
-  }
-
-	.list-item {
-		margin: 12px auto;
-		height: 60px;
-		font-size: 1.3rem;
-	}
-
-	.delete-btn {
-		padding: 0 25px;
-	}
-}
-
-
 /* react-transition-group animation */
 
 .fade-todo-enter {
@@ -190,6 +169,25 @@ body {
 
 /* react-transition-group animation */
 
+@media (min-width: 1281px) {
+  #root {
+		width: 45vw;
+  }
+  
+  .todo-input {
+    font-size: 1.5rem;
+  }
+
+	.list-item {
+		margin: 12px auto;
+		height: 60px;
+		font-size: 1.3rem;
+	}
+
+	.delete-btn {
+		padding: 0 25px;
+	}
+}
 
 @media (min-width: 1025px) and (max-width: 1280px) {
   #root {
